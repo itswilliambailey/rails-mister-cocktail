@@ -3,6 +3,7 @@
     <h1>Welcome to Willow Cocktails!</h1>
     <p>The digital pub to make you happy</p>
     <a class="btn btn-primary" href="#list">Choose a Cocktail</a>
+    <%= link_to 'Create a new cocktail', new_cocktail_path %>
   </div>
   <div id="list">
     <% @cocktails.each do |cocktail| %>
@@ -10,7 +11,6 @@
         <img class="card-img-top" src="https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><%= cocktail.name %></h5>
-          <p class="card-text"><%= cocktail.ingredients %></p>
           <%= link_to 'Discover', cocktail_path(cocktail.id) %>
         </div>
       </div>

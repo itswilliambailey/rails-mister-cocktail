@@ -1,9 +1,9 @@
 <div class="container">
   <h1>Off you go! Select the best ingredients</h1>
   <p>Select 3 ingredients and give a name to your cocktail!</p>
-  <%= simple_form_for [ @cocktail ] do |f| %>
-    <%= f.input :name %>
-    <%= f.association :ingredients, input_html: { class: 'select2' } %>
-    <%= f.submit "Add cocktail", class: "btn btn-primary" %>
+  <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient, input_html: { class: 'select2' } %>
+    <%= f.submit "Add dose", class: "btn btn-primary" %>
   <% end %>
 </div>
