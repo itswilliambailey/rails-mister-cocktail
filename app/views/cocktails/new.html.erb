@@ -3,6 +3,7 @@
   <p>Select 3 ingredients and give a name to your cocktail!</p>
   <%= simple_form_for [ @cocktail ] do |f| %>
     <%= f.input :name %>
+    <%= f.input :photo, as: :file, label: "Image of your cocktail" %>
     <%= f.association :ingredients, input_html: { class: 'select2' } %>
     <%= f.submit "Add cocktail", class: "btn btn-primary" %>
   <% end %>

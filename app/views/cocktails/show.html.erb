@@ -1,6 +1,9 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
   <h2>A drink to jack you up</h2>
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail) %>
   <% @cocktail.doses.each do |dose| %>
   <%= dose.description %>
